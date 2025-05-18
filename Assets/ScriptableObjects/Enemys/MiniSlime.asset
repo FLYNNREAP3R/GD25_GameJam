@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e034e68916f166b438b529ccc63442d6, type: 3}
+  m_Name: MiniSlime
+  m_EditorClassIdentifier: 
+  enemyName: MiniSlime
+  prefab: {fileID: 9094958202995799043, guid: 0ba100138abbf8e468b39865c0ac5463, type: 3}
+  health: 2
+  speed: 2
+  reward: 1
