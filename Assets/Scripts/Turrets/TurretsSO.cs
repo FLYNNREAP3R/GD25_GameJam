@@ -7,4 +7,5 @@ public class TurretsSO : ScriptableObject
     public GameObject prefab;
     public Transform target;
     public float range;
+    public int cost; 
 }

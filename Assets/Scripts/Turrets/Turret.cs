@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     public float range;
+    public float turnSpeed = 10f;
+    public int cost;
 
+
+    public Transform turretRotate;
     public string enemyTag = "Enemy";
 
     public void Initialize(TurretsSO data)
     {
         target = data.target;
         range = data.range;
+        cost = data.cost;
+
     }
 
     private void Start ()
@@ -51,6 +57,14 @@ public class Turret : MonoBehaviour
     {
         if (target == null)
             return;
+
+        // Target lock on
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(turretRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        turretRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+
     }
 
     // Places a red sphere on the selected turret to show the range to the player
