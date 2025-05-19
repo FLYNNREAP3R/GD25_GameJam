@@ -16,3 +16,9 @@ MonoBehaviour:
   - enemyType: {fileID: 11400000, guid: 4b63a6f2a08b79d47baa51692ff3e308, type: 2}
     count: 10
     delayBetweenSpawns: 1
+  - enemyType: {fileID: 11400000, guid: 371880541fbf14442ae014af20c7e8f5, type: 2}
+    count: 1
+    delayBetweenSpawns: 3
+  - enemyType: {fileID: 11400000, guid: 09094a6c9b591a14fb2ac14dd2d06940, type: 2}
+    count: 5
+    delayBetweenSpawns: 1

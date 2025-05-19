@@ -129,5 +129,17 @@ public class Enemy : MonoBehaviour
         gameObject.SetActive(false);
         //Destroy(gameObject);
     }
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("CPU"))
+        {
+            Nexus nexus = other.GetComponent<Nexus>();
+            if (nexus != null)
+            {
+                nexus.TakeDamage(1);
+                // Añadir lógica para eliminar el enemigo
+                gameObject.SetActive(false);
+            }
+        }
+    }
 }
