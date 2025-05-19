@@ -11,6 +11,9 @@ public class Turret : MonoBehaviour
     public Transform turretRotate;
     public string enemyTag = "Enemy";
 
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+
     public void Initialize(TurretsSO data)
     {
         target = data.target;
@@ -64,6 +67,18 @@ public class Turret : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(turretRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         turretRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
+        if (fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
+
+        void Shoot()
+        {
+            Debug.Log("Shoot");
+        }
 
     }
 

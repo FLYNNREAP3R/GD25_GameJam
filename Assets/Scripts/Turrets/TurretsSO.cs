@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TurretsSO", menuName = "Scriptable Objects/TurretsSO")]
+[CreateAssetMenu(fileName = "TurretsSO", menuName = "TD/Turret Type")]
 public class TurretsSO : ScriptableObject
 {
     public string turretName;

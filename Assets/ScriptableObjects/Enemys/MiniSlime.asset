@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MiniSlime
   m_EditorClassIdentifier: 
   enemyName: MiniSlime
-  prefab: {fileID: 9094958202995799043, guid: 0ba100138abbf8e468b39865c0ac5463, type: 3}
+  prefab: {fileID: 555192087804314768, guid: ebca0cd9af2be7742a1c99e058bf4f89, type: 3}
   health: 2
   speed: 2
   reward: 1

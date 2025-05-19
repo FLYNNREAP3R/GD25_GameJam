@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   enemyName: Normal
-  prefab: {fileID: 4866238283897881801, guid: 903aff0f4e3886c4382275f7bf5edd3e, type: 3}
+  prefab: {fileID: 3301896931378845700, guid: ac7baa3865e1bbc42801e3fd9ad486dd, type: 3}
   health: 5
   speed: 5
   reward: 1
