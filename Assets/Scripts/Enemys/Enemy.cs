@@ -1,14 +1,33 @@
 using UnityEditor.Playables;
 using UnityEngine;
-
 public class Enemy : MonoBehaviour
 {
+    public Transform[] path; // lista de puntos del camino
+    public int currentWaypointIndex = 0;
     private int health;//Max Health
     private int actualHealth;
     private float speed;
     private int reward;
-
+    private float speedModifier = 1f;
     private IEnemyAbility[] abilities;
+    private EnemyLifeUI enemyLifeUI;
+    private void Start()
+    {
+        if (path == null || path.Length == 0)
+        {
+            path = PathManager.Instance.waypoints;
+        }
+        // Inicializar la vida
+        actualHealth = health;
+        enemyLifeUI = GetComponentInChildren<EnemyLifeUI>();
+        enemyLifeUI.SetLife(health);
+        // Inicializar habilidades
+        foreach (var ability in abilities)
+        {
+            ability.Initialize(this);
+        }
+    }
+
 
     public void Initialize(EnemyTypeSO data)
     {
@@ -17,6 +36,8 @@ public class Enemy : MonoBehaviour
         reward = data.reward;
 
         abilities = GetComponents<IEnemyAbility>();
+        enemyLifeUI = GetComponentInChildren<EnemyLifeUI>();
+        enemyLifeUI.SetLife(health);
         foreach (var ability in abilities)
         {
             ability.Initialize(this);
@@ -31,26 +52,71 @@ public class Enemy : MonoBehaviour
         }
 
         // Mover, seguir camino, etc.
+        //Move forward 2d
+        MoveAlongPath();
     }
+    void MoveAlongPath()
+    {
+        if (currentWaypointIndex >= path.Length) return;
 
+        Transform target = path[currentWaypointIndex];
+        Vector3 dir = (target.position - transform.position).normalized;
+        transform.position += dir * GetCurrentSpeed() * Time.deltaTime;
+
+        if (Vector3.Distance(transform.position, target.position) < 0.2f)
+        {
+            currentWaypointIndex++;
+        }
+    }
+    #region Speed
+    public float GetCurrentSpeed() => speed * speedModifier;
+
+    public void SetSpeedModifier(float multiplier)
+    {
+        speedModifier = multiplier;
+    }
+    #endregion
+    #region Life
     public void TakeDamage(int dmg)
     {
-        foreach(var ability in abilities) {
+        // Revelar si tiene Cloak
+        foreach (var ability in abilities)
+        {
+            if (ability is Cloak cloak)
+            {
+                cloak.Reveal();
+            }
+        }
+
+        // Modificar daño según habilidades
+        foreach (var ability in abilities)
+        {
             if (ability is IModifyDamage modifier)
             {
                 dmg = modifier.ModifyIncomingDamage(dmg);
             }
         }
 
-        health -= dmg;
-        if (health <= 0) Die();
+        actualHealth -= dmg;
+        enemyLifeUI.UpdateLife(actualHealth);
+        if (actualHealth <= 0) Die();
     }
+
     public void Heal(int amount)
     {
         actualHealth += amount;
         actualHealth = Mathf.Min(actualHealth, health);
+        enemyLifeUI.UpdateLife(actualHealth);
     }
-
+    public int GetHealth()
+    {
+        return actualHealth;
+    }
+    public int GetMaxHealth()
+    {
+        return health;
+    }
+    #endregion
     void Die()
     {
         foreach (var ability in abilities)
@@ -59,6 +125,9 @@ public class Enemy : MonoBehaviour
         }
 
         // Añadir recompensa, efectos, etc.
-        Destroy(gameObject);
+        //Pool, disable
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
+    
 }

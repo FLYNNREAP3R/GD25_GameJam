@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4898428461644410789
+--- !u!1001 &6061423556430663990
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_Name
-      value: Slime
+      value: Boss Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66,25 +66,42 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2955872867429858205}
+      addedObject: {fileID: 8500375662002378967}
+    - targetCorrespondingSourceObject: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 915623088103121420}
   m_SourcePrefab: {fileID: 100100000, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
---- !u!1 &3301896931378845700 stripped
+--- !u!1 &4194689517473474199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
-  m_PrefabInstance: {fileID: 4898428461644410789}
+  m_PrefabInstance: {fileID: 6061423556430663990}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-2955872867429858205
+--- !u!114 &8500375662002378967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301896931378845700}
+  m_GameObject: {fileID: 4194689517473474199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b9a9342b386990449c859947e021630, type: 3}
+  m_Script: {fileID: 11500000, guid: 241fb9d60b25e844bb8a3133d1a24b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionType: {fileID: 11400000, guid: 8533ab618beb155449d66af62c77b7ac, type: 2}
-  minionCount: 2
-  spawnSpread: 1
+  flatReduction: 1
+  usePercentage: 0
+  percentReduction: 0.25
+--- !u!114 &915623088103121420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194689517473474199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75186ab43c06bc4fa00a43e172824a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 1
+  healInterval: 1
