@@ -19,6 +19,7 @@ public class SpawnMinionsOnDeath : EnemyAbility
             if (enemyScript != null)
             {
                 enemyScript.Initialize(minionType);
+                enemyScript.SetActualPath(enemy.currentWaypointIndex);
             }
         }
     }

@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     private float speedModifier = 1f;
     private IEnemyAbility[] abilities;
     private EnemyLifeUI enemyLifeUI;
+    private bool isAlive = true;
     private void Start()
     {
         if (path == null || path.Length == 0)
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour
         health = data.health;
         speed = data.speed;
         reward = data.reward;
-
+        isAlive = true;
         abilities = GetComponents<IEnemyAbility>();
         enemyLifeUI = GetComponentInChildren<EnemyLifeUI>();
         enemyLifeUI.SetLife(health);
@@ -79,6 +80,7 @@ public class Enemy : MonoBehaviour
     #region Life
     public void TakeDamage(int dmg)
     {
+        if(!isAlive) return;
         // Revelar si tiene Cloak
         foreach (var ability in abilities)
         {
@@ -119,6 +121,7 @@ public class Enemy : MonoBehaviour
     #endregion
     void Die()
     {
+        isAlive = false;
         foreach (var ability in abilities)
         {
             ability.OnDeath();
@@ -128,6 +131,11 @@ public class Enemy : MonoBehaviour
         //Pool, disable
         gameObject.SetActive(false);
         //Destroy(gameObject);
+    }
+    //For enemys instanced from another enemy
+    public void SetActualPath(int currentWaypoint)
+    {
+        currentWaypointIndex = currentWaypoint;
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 475fba8371fd7d147a6480d9d1f55c0c, type: 3}
-  m_Name: Wave_1
+  m_Name: Wave_Boss
   m_EditorClassIdentifier: 
   enemies:
-  - enemyType: {fileID: 11400000, guid: 4b63a6f2a08b79d47baa51692ff3e308, type: 2}
+  - enemyType: {fileID: 11400000, guid: 371880541fbf14442ae014af20c7e8f5, type: 2}
     count: 1
     delayBetweenSpawns: 0
