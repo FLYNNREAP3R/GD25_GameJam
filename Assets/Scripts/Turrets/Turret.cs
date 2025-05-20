@@ -3,16 +3,23 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private Transform target;
+
+    [Header("Attributes")]
+
     public float range;
+    public float fireRate = 1f;
+    private float fireCountdown = 0f;
+
+
+    [Header("Unity Setup Fields")]
+
     public float turnSpeed = 10f;
     public int cost;
-
-
     public Transform turretRotate;
     public string enemyTag = "Enemy";
 
-    public float fireRate = 1f;
-    private float fireCountdown = 0f;
+    public GameObject bulletPrefab;
+    public Transform firePoint;
 
     public void Initialize(TurretsSO data)
     {
@@ -77,7 +84,13 @@ public class Turret : MonoBehaviour
 
         void Shoot()
         {
-            Debug.Log("Shoot");
+           GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+           Bullet bullet = bulletGO.GetComponent<Bullet>();
+
+           if (bullet != null)
+           {
+               bullet.Seek(target);
+           }
         }
 
     }
