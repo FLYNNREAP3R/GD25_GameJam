@@ -12,17 +12,16 @@ public class SpawnMinionsOnDeath : EnemyAbility
 
         for (int i = 0; i < minionCount; i++)
         {
-            Vector3 offset = new Vector3(Random.Range(-spawnSpread, spawnSpread), 0, Random.Range(-spawnSpread, spawnSpread));
-            GameObject minion = Instantiate(minionType.prefab, transform.position + offset, Quaternion.identity);
+            Vector3 offset = new Vector3(Random.Range(-spawnSpread, spawnSpread),0,Random.Range(-spawnSpread, spawnSpread));
 
-            Enemy enemyScript = minion.GetComponent<Enemy>();
-            if (enemyScript != null)
-            {
-                enemyScript.Initialize(minionType);
-                enemyScript.SetActualPath(enemy.currentWaypointIndex);
-            }
+            Enemy minion = EnemyPoolManager.Instance.GetEnemy(minionType);
+            minion.transform.position = transform.position + offset;
+            minion.transform.rotation = Quaternion.identity;
+            minion.Initialize(minionType);
+            minion.SetActualPath(enemy.currentWaypointIndex);
         }
     }
+
 
     public override void UpdateAbility() { }
 }

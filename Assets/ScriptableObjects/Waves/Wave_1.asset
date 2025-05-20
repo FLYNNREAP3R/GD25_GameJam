@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - enemyType: {fileID: 11400000, guid: 4b63a6f2a08b79d47baa51692ff3e308, type: 2}
-    count: 1
-    delayBetweenSpawns: 0
+    count: 5
+    delayBetweenSpawns: 1

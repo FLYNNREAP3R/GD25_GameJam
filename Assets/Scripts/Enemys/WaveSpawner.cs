@@ -39,8 +39,9 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(EnemyTypeSO enemyType)
     {
-        GameObject go = Instantiate(enemyType.prefab, spawnPoint.position, Quaternion.identity);
-        Enemy enemy = go.GetComponent<Enemy>();
+        Enemy enemy = EnemyPoolManager.Instance.GetEnemy(enemyType);
+        enemy.transform.position = spawnPoint.position;
+        enemy.transform.rotation = Quaternion.identity;
         enemy.Initialize(enemyType);
     }
 }
