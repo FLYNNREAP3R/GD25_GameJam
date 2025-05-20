@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private IEnemyAbility[] abilities;
     private EnemyLifeUI enemyLifeUI;
     private bool isAlive = true;
+    private EnemyTypeSO enemyTypeSO;
     private void Start()
     {
         if (path == null || path.Length == 0)
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
 
     public void Initialize(EnemyTypeSO data)
     {
+        enemyTypeSO = data;
         health = data.health;
         speed = data.speed;
         reward = data.reward;
@@ -129,8 +131,8 @@ public class Enemy : MonoBehaviour
 
         // Añadir recompensa, efectos, etc.
         //Pool, disable
-        gameObject.SetActive(false);
-        //Destroy(gameObject);
+        EnemyPoolManager.Instance.ReturnToPool(this, enemyTypeSO);
+        //gameObject.SetActive(false);
     }
     //For enemys instanced from another enemy
     public void SetActualPath(int currentWaypoint)
