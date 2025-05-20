@@ -36,7 +36,6 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        Debug.Log("We hit the virus!");
         target.GetComponent<Enemy>().TakeDamage(1);
         Destroy(gameObject);
     }

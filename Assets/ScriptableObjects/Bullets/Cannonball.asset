@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ffc1824e03852a418f0ad6debf8fc17, type: 3}
-  m_Name: Normal
+  m_Script: {fileID: 11500000, guid: 7db851dcae886ab4b9e43565451854de, type: 3}
+  m_Name: Cannonball
   m_EditorClassIdentifier: 
-  turretName: Normal
-  prefab: {fileID: 4881006239648605239, guid: 16cc7cca5a713714ca3e0003b148c98d, type: 3}
-  target: {fileID: 0}
-  range: 5
-  cost: 2
+  prefab: {fileID: 2698980185749747393, guid: ca95ca951b0764740aaa7029075ebef4, type: 3}
+  damage: 5
