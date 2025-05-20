@@ -129,7 +129,7 @@ public class Enemy : MonoBehaviour
             ability.OnDeath();
         }
 
-        // Añadir recompensa, efectos, etc.
+        GameManager.instance.EnemyDeath(enemyTypeSO.reward);
         //Pool, disable
         EnemyPoolManager.Instance.ReturnToPool(this, enemyTypeSO);
         //gameObject.SetActive(false);
@@ -140,6 +140,19 @@ public class Enemy : MonoBehaviour
         currentWaypointIndex = currentWaypoint;
     }
     private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("CPU"))
+        {
+            Nexus nexus = other.GetComponent<Nexus>();
+            if (nexus != null)
+            {
+                nexus.TakeDamage(1);
+                // Añadir lógica para eliminar el enemigo
+                gameObject.SetActive(false);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("CPU"))
         {
