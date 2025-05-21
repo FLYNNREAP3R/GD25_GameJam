@@ -3083,7 +3083,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0$
+  m_text: 'Bytes: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3110,8 +3110,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5068,6 +5068,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8631798144825778336}
     m_Modifications:
+    - target: {fileID: 1044560582599820500, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
+      propertyPath: m_text
+      value: Artillery 10 bytes
+      objectReference: {fileID: 0}
     - target: {fileID: 1875463993043158735, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 1
@@ -5174,6 +5178,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8631798144825778336}
     m_Modifications:
+    - target: {fileID: 1044560582599820500, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
+      propertyPath: m_text
+      value: Support 5 bytes
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044560582599820500, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044560582599820500, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 1875463993043158735, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 1
@@ -5280,9 +5296,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8631798144825778336}
     m_Modifications:
+    - target: {fileID: 1044560582599820500, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
+      propertyPath: m_text
+      value: Gunner 2 bytes
+      objectReference: {fileID: 0}
     - target: {fileID: 1875463993043158735, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875463993043158735, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875463993043158735, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875463993043158735, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2360951760747477065, guid: 58254b1610d524e45930fbb5badaea4e, type: 3}
       propertyPath: m_Name

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db851dcae886ab4b9e43565451854de, type: 3}
   m_Name: Cannonball
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2698980185749747393, guid: ca95ca951b0764740aaa7029075ebef4, type: 3}
-  damage: 5
+  prefab: {fileID: 1576999567707868353, guid: ca95ca951b0764740aaa7029075ebef4, type: 3}
+  damage: 15
