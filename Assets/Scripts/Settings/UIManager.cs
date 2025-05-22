@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateMoney(int money)
     {
-        _money.text = money.ToString()+"$";
+        _money.text = money.ToString();
     }
     public void Stop()
     {
