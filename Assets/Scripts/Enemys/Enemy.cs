@@ -82,6 +82,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         if(!isAlive) return;
+        MusicController.instance.PlayEffect("Shoot_"+Random.Range(1, 6));
         // Revelar si tiene Cloak
         foreach (var ability in abilities)
         {

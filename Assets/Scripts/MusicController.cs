@@ -9,19 +9,25 @@ public class MusicController : MonoBehaviour
     public class AudioEffectData
     {
         public string effect;
-        public AudioSource audioSource;
+        public AudioClip audioSource;
     }
+
     //Musics - Have 2 Source, 1 active music and 2 is the next music with fade effect.
+    [Header("Music")]
     [SerializeField, Range(0f, 5f)] private float durationFade = 2f;
-    [SerializeField, Header("Music")] private AudioClip[] _clips;
+    [SerializeField] private AudioClip[] _clips;
     private AudioSource _source, _source2;
     private bool _playMusic = true;
-    
-
-    [Header("Foley")]
+    //Instancia 
+    public static MusicController instance;
+    [Header("Effects")]
+    [SerializeField] private AudioMixerGroup effectsMixerGroup;
     [SerializeField] private List<AudioEffectData> audioEffects = new List<AudioEffectData>();
     void Start()
     {
+        if(instance != null && instance != this)
+            Destroy(this);
+        instance = this;
         _source = GetComponent<AudioSource>();
         _source2 = gameObject.AddComponent<AudioSource>();
         _source2.outputAudioMixerGroup = _source.outputAudioMixerGroup;
@@ -91,18 +97,22 @@ public class MusicController : MonoBehaviour
     //EFFECTS
     public void PlayEffect(string effect)
     {
-        // Busca el AudioEffect con el nombre proporcionado
-        AudioEffectData efectoEncontrado = audioEffects.Find(ae => ae.effect == effect);
+        AudioClip clip = audioEffects.Find(ae => ae.effect == effect)?.audioSource;
+        if (clip == null)
+        {
+            Debug.LogWarning($"No se encontró el efecto: {effect}");
+            return;
+        }
 
-        // Si se encuentra el efecto, reproduce el audio
-        if (efectoEncontrado != null && efectoEncontrado.audioSource != null)
-        {
-            efectoEncontrado.audioSource.Play();
-        }
-        else
-        {
-            // Control de errores: Efecto no encontrado o AudioSource no configurado
-            Debug.LogError("Error: Efecto de audio no encontrado o AudioSource no configurado para el nombre '" + effect + "'");
-        }
+        GameObject tempGO = new GameObject($"SFX_{effect}");
+        tempGO.transform.position = Vector3.zero;
+
+        AudioSource aSource = tempGO.AddComponent<AudioSource>();
+        aSource.clip = clip;
+        aSource.outputAudioMixerGroup = effectsMixerGroup;
+        aSource.Play();
+
+        Destroy(tempGO, clip.length);
     }
+
 }
