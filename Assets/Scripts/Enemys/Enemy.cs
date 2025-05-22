@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using Unity.Collections;
+
 public class Enemy : MonoBehaviour
 {
     public Transform[] path; // lista de puntos del camino
@@ -12,6 +15,7 @@ public class Enemy : MonoBehaviour
     private EnemyLifeUI enemyLifeUI;
     private bool isAlive = true;
     private EnemyTypeSO enemyTypeSO;
+    private bool isSlowed;
     private void Start()
     {
         if (path == null || path.Length == 0)
@@ -27,6 +31,7 @@ public class Enemy : MonoBehaviour
         {
             ability.Initialize(this);
         }
+
     }
 
 
@@ -104,6 +109,24 @@ public class Enemy : MonoBehaviour
         actualHealth -= dmg;
         enemyLifeUI.UpdateLife(actualHealth);
         if (actualHealth <= 0) Die();
+    }
+
+    public void SlowEnemy(int slowSpeed, int timeSlowed)
+    {
+        if (!isAlive || isSlowed == true) return;
+
+        StartCoroutine(SlowEnemyTimer(slowSpeed, timeSlowed));
+    }
+
+    private IEnumerator SlowEnemyTimer(int slowSpeed, int timeSlowed)
+    {
+        isSlowed = true;
+        speed = speed - slowSpeed;
+
+        yield return new WaitForSeconds(timeSlowed);
+
+        speed = speed + slowSpeed;
+        isSlowed = false;
     }
 
     public void Heal(int amount)

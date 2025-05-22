@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     public float speed = 70f;
+    public BulletSO bulletData;
 
     public void Seek(Transform _target)
     {
@@ -26,7 +27,9 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
+            Debug.Log("Hello world");
             HitTarget();
+            SlowEnemy();
             return;
         }
 
@@ -36,7 +39,13 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        target.GetComponent<Enemy>().TakeDamage(1);
+        target.GetComponent<Enemy>().TakeDamage(bulletData.damage);
+        Destroy(gameObject);
+    }
+
+    void SlowEnemy()
+    {
+        target.GetComponent<Enemy>().SlowEnemy(3, 3);
         Destroy(gameObject);
     }
 }

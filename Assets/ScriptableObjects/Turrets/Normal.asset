@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   turretName: Normal
-  prefab: {fileID: 4881006239648605239, guid: 16cc7cca5a713714ca3e0003b148c98d, type: 3}
+  prefab: {fileID: 316153770704431198, guid: 16cc7cca5a713714ca3e0003b148c98d, type: 3}
   target: {fileID: 0}
   range: 5
   cost: 2

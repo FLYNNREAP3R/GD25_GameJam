@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ffc1824e03852a418f0ad6debf8fc17, type: 3}
-  m_Name: Cannon
+  m_Name: Support
   m_EditorClassIdentifier: 
-  turretName: Cannon
-  prefab: {fileID: 8520015855859848143, guid: 202e49f316f64e74bbc8a0aa4f784a9b, type: 3}
+  turretName: Support
+  prefab: {fileID: 5653358539849625752, guid: 0b6e87b9b1fed3d4c81c70a38761ca3f, type: 3}
   target: {fileID: 0}
   range: 10
   cost: 5
