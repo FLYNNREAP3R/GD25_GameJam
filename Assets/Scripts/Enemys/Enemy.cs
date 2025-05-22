@@ -112,21 +112,21 @@ public class Enemy : MonoBehaviour
         if (actualHealth <= 0) Die();
     }
 
-    public void SlowEnemy(int slowSpeed, int timeSlowed)
+    public void SlowEnemy(float slowSpeed, float timeSlowed)
     {
         if (!isAlive || isSlowed == true) return;
 
         StartCoroutine(SlowEnemyTimer(slowSpeed, timeSlowed));
     }
 
-    private IEnumerator SlowEnemyTimer(int slowSpeed, int timeSlowed)
+    private IEnumerator SlowEnemyTimer(float slowSpeed, float timeSlowed)
     {
         isSlowed = true;
         speed = speed - slowSpeed;
 
         yield return new WaitForSeconds(timeSlowed);
 
-        speed = speed + slowSpeed;
+        speed += slowSpeed;
         isSlowed = false;
     }
 

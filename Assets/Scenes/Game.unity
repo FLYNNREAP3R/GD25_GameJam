@@ -2666,8 +2666,11 @@ MonoBehaviour:
   spawnPoint: {fileID: 402843607}
   waves:
   - {fileID: 11400000, guid: a6e4525c3021d394e955a98647bb862e, type: 2}
-  - {fileID: 11400000, guid: 8b35c6159085bb646880e1d9ac0461a0, type: 2}
-  - {fileID: 11400000, guid: a94b0cb3dbc89204ebaf7fae38314628, type: 2}
+  - {fileID: 11400000, guid: 66bc19f293c767349a6b3a5b8065c264, type: 2}
+  - {fileID: 11400000, guid: c158eabe8e9d6b748a1e6f9de524dad8, type: 2}
+  - {fileID: 11400000, guid: 18bf281a7eb9a5f40894ed9c862eef8d, type: 2}
+  - {fileID: 11400000, guid: e8ba18ac36a0d8245ad27caa701d7a1e, type: 2}
+  - {fileID: 11400000, guid: d19e692a9842e2c47a40014f3802f12d, type: 2}
   waveProgressUI: {fileID: 7386864287323539065}
   timeBetweenWaves: 2
 --- !u!114 &260292791

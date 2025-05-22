@@ -30,9 +30,9 @@ public class Bullet : MonoBehaviour
             Debug.Log("Hello world");
             HitTarget();
             SlowEnemy();
+            Destroy(gameObject);
             return;
         }
-
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 
     }
@@ -40,12 +40,10 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         target.GetComponent<Enemy>().TakeDamage(bulletData.damage);
-        Destroy(gameObject);
     }
 
     void SlowEnemy()
     {
-        target.GetComponent<Enemy>().SlowEnemy(3, 3);
-        Destroy(gameObject);
+        target.GetComponent<Enemy>().SlowEnemy(0.7f, 3);
     }
 }
