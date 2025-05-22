@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_Name
-      value: Boss Variant
+      value: Botnet Commander
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -82,17 +82,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8500375662002378967}
+      addedObject: {fileID: -3263268052310669523}
     - targetCorrespondingSourceObject: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 915623088103121420}
+      addedObject: {fileID: -6778469958765694247}
+    - targetCorrespondingSourceObject: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 993129387490343965}
   m_SourcePrefab: {fileID: 100100000, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
 --- !u!1 &4194689517473474199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
   m_PrefabInstance: {fileID: 6061423556430663990}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8500375662002378967
+--- !u!114 &-3263268052310669523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,13 +104,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4194689517473474199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 241fb9d60b25e844bb8a3133d1a24b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 517d93449af0e0b43ad0c8343682ea3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flatReduction: 1
-  usePercentage: 0
-  percentReduction: 0.25
---- !u!114 &915623088103121420
+  enemiesToSummon:
+  - enemyType: {fileID: 11400000, guid: c15178738c4e1b64dbff3585ae73d91b, type: 2}
+    count: 2
+  - enemyType: {fileID: 11400000, guid: 26a9ef727d53a4443a9ead3628ccca25, type: 2}
+    count: 1
+  - enemyType: {fileID: 11400000, guid: cab95f96124fef44fa5277a7a41ab841, type: 2}
+    count: 3
+  summonInterval: 10
+  spawnRadius: 1.5
+  summonOnce: 1
+--- !u!114 &-6778469958765694247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,8 +126,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4194689517473474199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a75186ab43c06bc4fa00a43e172824a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 43c452babc73604438ed32c99b3f548d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 1
-  healInterval: 1
+  radius: 5
+  speedMultiplier: 1.5
+--- !u!114 &993129387490343965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194689517473474199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97427d48da74264099d72ccf84cd6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healRadius: 4
+  healAmount: 2
+  healInterval: 2

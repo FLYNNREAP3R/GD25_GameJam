@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e034e68916f166b438b529ccc63442d6, type: 3}
-  m_Name: Normal
+  m_Name: Botnet Commander
   m_EditorClassIdentifier: 
-  enemyName: Normal
-  prefab: {fileID: 3301896931378845700, guid: ac7baa3865e1bbc42801e3fd9ad486dd, type: 3}
-  health: 5
-  speed: 5
-  reward: 1
+  enemyName: Botnet Commander
+  prefab: {fileID: 4194689517473474199, guid: cca3c86789405214a8a09b5e7a04a32d, type: 3}
+  health: 600
+  speed: 1.4
+  reward: 25

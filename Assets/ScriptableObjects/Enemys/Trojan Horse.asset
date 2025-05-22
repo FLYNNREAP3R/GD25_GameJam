@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e034e68916f166b438b529ccc63442d6, type: 3}
-  m_Name: Slime
+  m_Name: Trojan Horse
   m_EditorClassIdentifier: 
-  enemyName: Slime
-  prefab: {fileID: 3301896931378845700, guid: 89e845f5196b9cd44873e1273d39dd76, type: 3}
-  health: 40
-  speed: 2.5
-  reward: 2
+  enemyName: Trojan Horse
+  prefab: {fileID: 7441006342389274951, guid: 7c708ae02d6570547842c5d2e6031ba4, type: 3}
+  health: 300
+  speed: 1.2
+  reward: 10

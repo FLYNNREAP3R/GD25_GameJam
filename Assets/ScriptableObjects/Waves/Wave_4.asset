@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 475fba8371fd7d147a6480d9d1f55c0c, type: 3}
-  m_Name: Wave_1
+  m_Name: Wave_4
   m_EditorClassIdentifier: 
   enemies:
+  - enemyType: {fileID: 11400000, guid: cab95f96124fef44fa5277a7a41ab841, type: 2}
+    count: 2
+    delayBetweenSpawns: 1
+  - enemyType: {fileID: 11400000, guid: 24e3977d32080ef41bac2ffaf5d3b628, type: 2}
+    count: 4
+    delayBetweenSpawns: 1
   - enemyType: {fileID: 11400000, guid: c15178738c4e1b64dbff3585ae73d91b, type: 2}
     count: 6
-    delayBetweenSpawns: 1
-  - enemyType: {fileID: 11400000, guid: 09094a6c9b591a14fb2ac14dd2d06940, type: 2}
-    count: 1
-    delayBetweenSpawns: 0.5
+    delayBetweenSpawns: 0.2

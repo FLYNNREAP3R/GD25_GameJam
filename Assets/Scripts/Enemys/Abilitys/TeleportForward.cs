@@ -23,9 +23,6 @@ public class TeleportForward : EnemyAbility
         int newIndex = Mathf.Min(e.currentWaypointIndex + waypointAdvance, e.path.Length - 1);
         e.currentWaypointIndex = newIndex;
         e.transform.position = e.path[newIndex].position;
-
-        // Optional: efecto visual
-        Debug.Log($"{e.name} teleported forward to waypoint {newIndex}");
     }
 
     public override void OnDeath()

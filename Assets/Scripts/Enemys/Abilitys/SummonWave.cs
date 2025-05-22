@@ -43,6 +43,7 @@ public class SummonWave : EnemyAbility
                 newEnemy.transform.position = transform.position + offset;
                 newEnemy.transform.rotation = Quaternion.identity;
                 newEnemy.Initialize(data.enemyType);
+                newEnemy.currentWaypointIndex = enemy.currentWaypointIndex; // Set the same waypoint index as the summoner
             }
         }
 

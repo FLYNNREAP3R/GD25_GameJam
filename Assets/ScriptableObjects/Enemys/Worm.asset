@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e034e68916f166b438b529ccc63442d6, type: 3}
-  m_Name: Slime
+  m_Name: Worm
   m_EditorClassIdentifier: 
-  enemyName: Slime
-  prefab: {fileID: 3301896931378845700, guid: 89e845f5196b9cd44873e1273d39dd76, type: 3}
-  health: 40
-  speed: 2.5
-  reward: 2
+  enemyName: Worm
+  prefab: {fileID: 9034671589032208292, guid: 263e4130a08c0c04e95df2460ca83c82, type: 3}
+  health: 60
+  speed: 3
+  reward: 6

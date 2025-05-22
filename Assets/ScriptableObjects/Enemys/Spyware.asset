@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e034e68916f166b438b529ccc63442d6, type: 3}
-  m_Name: Boss
+  m_Name: Spyware
   m_EditorClassIdentifier: 
-  enemyName: Boss
-  prefab: {fileID: 4194689517473474199, guid: cca3c86789405214a8a09b5e7a04a32d, type: 3}
-  health: 100
-  speed: 1
-  reward: 30
+  enemyName: Spyware
+  prefab: {fileID: 8583553285019622088, guid: 0fafcd12606ca3e4bbcde5bdaab4c83c, type: 3}
+  health: 120
+  speed: 1.8
+  reward: 5

@@ -10,6 +10,7 @@ public class Cloak : EnemyAbility
         base.Initialize(_enemy);
         renderers = GetComponentsInChildren<Renderer>();
         SetCloak(true);
+        Invoke("Reveal", 5f); // Desvela después de 5 segundos
     }
 
     public override void UpdateAbility() { }

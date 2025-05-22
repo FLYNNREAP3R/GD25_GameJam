@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 475fba8371fd7d147a6480d9d1f55c0c, type: 3}
-  m_Name: Wave_Slime
+  m_Name: Wave_3
   m_EditorClassIdentifier: 
   enemies:
-  - enemyType: {fileID: 11400000, guid: 09094a6c9b591a14fb2ac14dd2d06940, type: 2}
-    count: 3
-    delayBetweenSpawns: 2
+  - enemyType: {fileID: 11400000, guid: 3612ddc72dfa49241b5badc6fdd67d45, type: 2}
+    count: 4
+    delayBetweenSpawns: 1
+  - enemyType: {fileID: 11400000, guid: c15178738c4e1b64dbff3585ae73d91b, type: 2}
+    count: 6
+    delayBetweenSpawns: 0.5
+  - enemyType: {fileID: 11400000, guid: 26a9ef727d53a4443a9ead3628ccca25, type: 2}
+    count: 6
+    delayBetweenSpawns: 1.5

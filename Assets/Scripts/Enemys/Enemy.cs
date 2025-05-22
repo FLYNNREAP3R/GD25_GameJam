@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
 
     public void Initialize(EnemyTypeSO data)
     {
+        currentWaypointIndex = 0;
         enemyTypeSO = data;
         health = data.health;
         speed = data.speed;

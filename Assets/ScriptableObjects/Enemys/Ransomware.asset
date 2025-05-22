@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475fba8371fd7d147a6480d9d1f55c0c, type: 3}
-  m_Name: Wave_Boss
+  m_Script: {fileID: 11500000, guid: e034e68916f166b438b529ccc63442d6, type: 3}
+  m_Name: Ransomware
   m_EditorClassIdentifier: 
-  enemies:
-  - enemyType: {fileID: 11400000, guid: 371880541fbf14442ae014af20c7e8f5, type: 2}
-    count: 1
-    delayBetweenSpawns: 0
+  enemyName: Ransomware
+  prefab: {fileID: 6215349149746007516, guid: 093c598f3013f684e8321f2dec167013, type: 3}
+  health: 350
+  speed: 1
+  reward: 15
