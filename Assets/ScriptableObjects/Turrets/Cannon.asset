@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cannon
   m_EditorClassIdentifier: 
   turretName: Cannon
-  prefab: {fileID: 8520015855859848143, guid: 202e49f316f64e74bbc8a0aa4f784a9b, type: 3}
+  prefab: {fileID: 3534988172269398797, guid: 202e49f316f64e74bbc8a0aa4f784a9b, type: 3}
   target: {fileID: 0}
   range: 10
   cost: 5

@@ -1,107 +1,101 @@
+using UnityEditor;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
     private Transform target;
+    private TurretsSO turretData;
+
+    private float timeUntilFire;
 
     [Header("Attributes")]
-
-    public float range;
-    public float fireRate = 1f;
-    private float fireCountdown = 0f;
-
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private int cost;
+    [SerializeField] private float range;
+    [SerializeField] private float fireRate;
 
     [Header("Unity Setup Fields")]
+    [SerializeField] private Transform turretRotate;
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firingPoint;
 
-    public float turnSpeed = 10f;
-    public int cost;
-    public Transform turretRotate;
-    public string enemyTag = "Enemy";
 
-    public GameObject bulletPrefab;
-    public Transform firePoint;
+
+
 
     public void Initialize(TurretsSO data)
     {
+        turretData = data;
         target = data.target;
         range = data.range;
         cost = data.cost;
-
-    }
-
-    private void Start ()
-    {
-        // Runs UpdateTarget method twice a second vs however many FPS the player is getting
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-    } 
-
-    // Turret tracks the nearest enemy based on the set range
-    void UpdateTarget()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
-
-        foreach (GameObject enemy in enemies)
-        {
-            float distanceToEnemy = Vector3.Distance (transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance)
-            {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
-        }
-
-        if (nearestEnemy != null && shortestDistance <= range)
-        {
-            target = nearestEnemy.transform;
-        }
-
-        else
-        {
-            target = null;
-        }
     }
 
     private void Update()
     {
         if (target == null)
+        {
+            FindTarget();
             return;
-
-        // Target lock on
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(turretRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        turretRotate.rotation = Quaternion.Euler(0f, 0f, rotation.z);
-
-        if (fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
         }
 
-        fireCountdown -= Time.deltaTime;
+        RotateToTarget();
 
-        void Shoot()
+        if (!CheckTargetIsInRange())
+            target = null;
+
+        else
         {
-           GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-           Bullet bullet = bulletGO.GetComponent<Bullet>();
+            timeUntilFire += Time.deltaTime;
 
-           if (bullet != null)
-           {
-               bullet.Seek(target);
-           }
+            if (timeUntilFire >= 1f / fireRate)
+            {
+                Shoot();
+                timeUntilFire = 0f;
+            }
         }
+    }
+
+    private void FindTarget()
+    {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, (Vector2)transform.position, 0f, enemyMask);
+
+        if (hits.Length > 0)
+        {
+            target = hits[0].transform;
+
+        }
+    }
+
+    private bool CheckTargetIsInRange()
+    {
+        return Vector2.Distance(target.position, transform.position) <= range;
+
 
     }
 
-    // Places a red sphere on the selected turret to show the range to the player
+    private void Shoot()
+    {
+        GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
+        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        bulletScript.Seek(target);
+    }
+
+    private void RotateToTarget()
+    {
+        float angle = Mathf.Atan2(target.position.y - turretRotate.position.y, target.position.x - turretRotate.position.x) * Mathf.Rad2Deg - 90f;
+
+        Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+        turretRotate.rotation = Quaternion.RotateTowards(turretRotate.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+    }
+
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Handles.color = Color.red;
+        Handles.DrawWireDisc(transform.position, transform.forward, range);
     }
-
 
 
 }

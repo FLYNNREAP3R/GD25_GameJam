@@ -39,7 +39,7 @@ public class Placement : MonoBehaviour
 
         if (placedTurrets.ContainsKey(cellPosition))
         {
-            Debug.Log("A turret is already in this celd.");
+            Debug.Log("A turret is already in this cell.");
             return;
         }
 

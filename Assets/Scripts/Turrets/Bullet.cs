@@ -2,43 +2,60 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [Header("Attributes")]
+    [SerializeField] private BulletSO bulletData;
+    [SerializeField] private float speed;
+    [SerializeField] private int damage;
+
+    [Header("Unity Setup Fields")] 
+    [SerializeField] private Rigidbody2D rb;
+
     private Transform target;
 
-    public float speed = 70f;
-    public BulletSO bulletData;
+    private void Initialize(BulletSO data)
+    {
+        bulletData = data;
+        damage = data.damage;
+        speed = data.speed;
+    }
+    void Update()
+    {
+        //if (target == null)
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
+
+        //Vector3 dir = target.position - transform.position;
+        //float distanceThisFrame = speed * Time.deltaTime;
+
+        //if (dir.magnitude <= distanceThisFrame)
+        //{
+        //    SlowEnemy();
+        //    Destroy(gameObject);
+        //    return;
+        //}
+        //transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 direction = (target.position - transform.position).normalized;
+
+        rb.linearVelocity = direction * speed;
+    }
 
     public void Seek(Transform _target)
     {
         target = _target;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (target == null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Vector3 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
-
-        if (dir.magnitude <= distanceThisFrame)
-        {
-            HitTarget();
-            SlowEnemy();
-            Destroy(gameObject);
-            return;
-        }
-        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-
-    }
-
-    void HitTarget()
+    private void OnCollisionEnter2D(Collision2D other)
     {
         target.GetComponent<Enemy>().TakeDamage(bulletData.damage);
+        Destroy(gameObject);
     }
 
     void SlowEnemy()

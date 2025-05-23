@@ -32982,7 +32982,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -61396,7 +61396,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1904039510}
   - component: {fileID: 1904039512}
-  - component: {fileID: 1904039513}
   - component: {fileID: 1904039511}
   - component: {fileID: 1904039514}
   - component: {fileID: 1904039515}
@@ -61446,7 +61445,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 97299d9b2629bb846916d261b993090d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -61833,19 +61832,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1904039513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904039509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb2b19489108f6449b1921066f019bab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverColor: {r: 0.08690815, g: 0.5943396, b: 0.2504315, a: 1}
 --- !u!19719996 &1904039514
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -61923,7 +61909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d461fce174f08c49aadf63716c3f10b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 316153770704431198, guid: 16cc7cca5a713714ca3e0003b148c98d, type: 3}
+  towerPrefab: {fileID: 1148288406400166272, guid: 16cc7cca5a713714ca3e0003b148c98d, type: 3}
   placementLayer:
     serializedVersion: 2
     m_Bits: 256

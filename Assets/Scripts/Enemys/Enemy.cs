@@ -88,6 +88,25 @@ public class Enemy : MonoBehaviour
     {
         speedModifier += multiplier;
     }
+
+    public void SlowEnemy(float slowSpeed, float timeSlowed)
+    {
+        if (!isAlive || isSlowed == true) return;
+
+        StartCoroutine(SlowEnemyTimer(slowSpeed, timeSlowed));
+    }
+
+    private IEnumerator SlowEnemyTimer(float slowSpeed, float timeSlowed)
+    {
+        isSlowed = true;
+        speed = speed - slowSpeed;
+
+        yield return new WaitForSeconds(timeSlowed);
+
+        speed += slowSpeed;
+        isSlowed = false;
+    }
+
     #endregion
     #region Life
     public void TakeDamage(int dmg)
@@ -115,24 +134,6 @@ public class Enemy : MonoBehaviour
         actualHealth -= dmg;
         enemyLifeUI.UpdateLife(actualHealth);
         if (actualHealth <= 0) Die();
-    }
-
-    public void SlowEnemy(float slowSpeed, float timeSlowed)
-    {
-        if (!isAlive || isSlowed == true) return;
-
-        StartCoroutine(SlowEnemyTimer(slowSpeed, timeSlowed));
-    }
-
-    private IEnumerator SlowEnemyTimer(float slowSpeed, float timeSlowed)
-    {
-        isSlowed = true;
-        speed = speed - slowSpeed;
-
-        yield return new WaitForSeconds(timeSlowed);
-
-        speed += slowSpeed;
-        isSlowed = false;
     }
 
     public void Heal(int amount)

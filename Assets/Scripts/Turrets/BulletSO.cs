@@ -4,6 +4,8 @@ using UnityEngine;
 public class BulletSO : ScriptableObject
 {
     private string bulletName;
+
     public GameObject prefab;
     public int damage;
+    public float speed;
 }
