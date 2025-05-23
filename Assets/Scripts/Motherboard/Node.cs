@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,7 +8,6 @@ public class Node : MonoBehaviour
 
     private Renderer rend;
     private TilemapCollider2D tileColl;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,7 +15,6 @@ public class Node : MonoBehaviour
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
     }
-
     void OnMouseDown()
     {
         Debug.Log("Please work");

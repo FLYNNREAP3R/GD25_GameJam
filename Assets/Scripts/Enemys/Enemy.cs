@@ -65,8 +65,13 @@ public class Enemy : MonoBehaviour
     }
     void MoveAlongPath()
     {
-        if (currentWaypointIndex >= path.Length) return;
-
+        if (currentWaypointIndex >= path.Length)
+        {
+            Debug.Log("Enemy reached the end of the path");
+            Nexus.instance.TakeDamage(1);
+            gameObject.SetActive(false);
+            return;
+        }
         Transform target = path[currentWaypointIndex];
         Vector3 dir = (target.position - transform.position).normalized;
         transform.position += dir * GetCurrentSpeed() * Time.deltaTime;
@@ -81,7 +86,7 @@ public class Enemy : MonoBehaviour
 
     public void SetSpeedModifier(float multiplier)
     {
-        speedModifier = multiplier;
+        speedModifier += multiplier;
     }
     #endregion
     #region Life
@@ -163,26 +168,16 @@ public class Enemy : MonoBehaviour
     {
         currentWaypointIndex = currentWaypoint;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("CPU"))
-        {
-            Nexus nexus = other.GetComponent<Nexus>();
-            if (nexus != null)
-            {
-                nexus.TakeDamage(1);
-                // Añadir lógica para eliminar el enemigo
-                gameObject.SetActive(false);
-            }
-        }
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Hit: " + other.name);
         if (other.CompareTag("CPU"))
         {
+            Debug.Log("CPU Hit");
             Nexus nexus = other.GetComponent<Nexus>();
             if (nexus != null)
             {
+                Debug.Log("Give Hit to CPU");
                 nexus.TakeDamage(1);
                 // Añadir lógica para eliminar el enemigo
                 gameObject.SetActive(false);

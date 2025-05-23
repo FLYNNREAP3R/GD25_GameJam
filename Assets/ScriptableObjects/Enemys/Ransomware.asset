@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Ransomware
   prefab: {fileID: 6215349149746007516, guid: 093c598f3013f684e8321f2dec167013, type: 3}
-  health: 350
+  health: 300
   speed: 1
   reward: 15

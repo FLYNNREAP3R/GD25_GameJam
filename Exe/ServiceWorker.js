@@ -1,4 +1,4 @@
-const cacheName = "DefaultCompany-GD25_GameJam-1.0";
+const cacheName = "DefaultCompany-NanoCore-1.0";
 const contentToCache = [
     "Build/Exe.loader.js",
     "Build/Exe.framework.js.br",

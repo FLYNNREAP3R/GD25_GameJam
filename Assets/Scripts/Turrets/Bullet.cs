@@ -27,7 +27,6 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
-            Debug.Log("Hello world");
             HitTarget();
             SlowEnemy();
             Destroy(gameObject);

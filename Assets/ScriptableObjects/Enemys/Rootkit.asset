@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Rootkit
   prefab: {fileID: 2576531224975621844, guid: ee0215f318be385428f466ca456602f3, type: 3}
-  health: 200
+  health: 180
   speed: 1.5
   reward: 9

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Trojan Horse
   prefab: {fileID: 7441006342389274951, guid: 7c708ae02d6570547842c5d2e6031ba4, type: 3}
-  health: 300
+  health: 250
   speed: 1.2
   reward: 10

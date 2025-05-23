@@ -5,11 +5,18 @@ public class Nexus : MonoBehaviour
     public int health; // Vida máxima
     private int actualHealth; // Vida actual
     [SerializeField] private Slider _life;
+    //instance
+    public static Nexus instance;
     private void Start()
     {
         actualHealth = health;
         _life.maxValue = health;
         _life.value = health;
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        instance = this;
 
     }
     public void TakeDamage(int dmg)

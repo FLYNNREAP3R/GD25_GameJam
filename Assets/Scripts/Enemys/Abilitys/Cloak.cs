@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Cloak : EnemyAbility
 {
-    public bool isCloaked = true;
+    private bool isCloaked = true;
     private Renderer[] renderers;
 
     public override void Initialize(Enemy _enemy)
@@ -30,8 +30,6 @@ public class Cloak : EnemyAbility
         {
             r.enabled = !active; // Oculta el render si cloaked
         }
-
-        // Marcar el estado para las torres
         // Layer or tag to identify the enemy
         gameObject.tag = active ? "CloakedEnemy" : "Enemy";
         gameObject.layer = active ? LayerMask.NameToLayer("CloakedEnemy") : LayerMask.NameToLayer("Enemy");

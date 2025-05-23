@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Adware
   prefab: {fileID: 3301896931378845700, guid: ac7baa3865e1bbc42801e3fd9ad486dd, type: 3}
-  health: 30
+  health: 15
   speed: 2.8
   reward: 2

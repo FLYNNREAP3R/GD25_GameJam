@@ -9,6 +9,7 @@ TagManager:
   - CloakedEnemy
   - CPU
   - Turret Placement
+  - Turret
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - CloakedEnemy
   - Enemy
-  - 
+  - BuildZone
   - 
   - 
   - 

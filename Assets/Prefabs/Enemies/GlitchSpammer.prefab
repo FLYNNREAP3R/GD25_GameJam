@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2981322ff08734e488eea9b8f726d46e, type: 2}
     - target: {fileID: 2186864314807955809, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -102,4 +106,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b625e30ecf727014db64c11c98936637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCloaked: 1

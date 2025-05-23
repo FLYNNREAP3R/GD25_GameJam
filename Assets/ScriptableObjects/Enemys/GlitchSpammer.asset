@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: GlitchSpammer
   prefab: {fileID: 7022410092114735366, guid: 4ce425f4300693d48ab63a37a707d08f, type: 3}
-  health: 70
+  health: 60
   speed: 3
   reward: 7
