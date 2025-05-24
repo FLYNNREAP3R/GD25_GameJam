@@ -25,6 +25,11 @@ public class UIManager : MonoBehaviour
     {
         _money.text = money.ToString();
     }
+
+    public void SetSelected()
+    {
+
+    }
     public void Stop()
     {
         GameManager.instance.ChangeGameStatus(GameManager.GameState.Pause);

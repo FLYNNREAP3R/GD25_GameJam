@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 306874002193172684, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -86,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_Name
-      value: Normal
+      value: Adware
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

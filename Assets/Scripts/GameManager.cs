@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public enum GameState { Start, Play, Pause, End }//Game State
     [SerializeField]private GameState currentGameState = GameState.Start;
     private int score = 0;
-    private int money = 0;
+    public int money = 0;
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -29,6 +29,22 @@ public class GameManager : MonoBehaviour
         UIManager.instance.UpdateMoney(money);
         UIManager.instance.UpdateScore(score);
     }
+
+    public bool SpendMoney(int amount)
+    {
+        if (amount <= money)
+        {
+            money -= amount;
+            UIManager.instance.UpdateMoney(money);
+            return true;
+        }
+        else
+        {
+            Debug.Log("You do not have enough money to purchase this item!");
+            return false;
+        }
+    }
+
     public void ChangeGameStatus(GameState newGameState)
     {
         currentGameState = newGameState;
@@ -38,7 +54,7 @@ public class GameManager : MonoBehaviour
                 //Start Game
                 Time.timeScale = 1;
                 score = 0;
-                money = 0;
+                money = 10;
                 UIManager.instance.UpdateMoney(money);
                 UIManager.instance.UpdateScore(score);
                 break;

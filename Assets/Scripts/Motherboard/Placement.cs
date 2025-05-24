@@ -7,7 +7,7 @@ public class Placement : MonoBehaviour
 {
     private Tilemap tilemap;
     [Header("Prefab Turret")]
-    public GameObject towerPrefab;
+    public GameObject tower;
     [Header("Layer Colocation")]
     public LayerMask placementLayer;
     [Header("Grid")]
@@ -44,8 +44,17 @@ public class Placement : MonoBehaviour
         }
 
         Vector3 placePosition = tilemap.GetCellCenterWorld(cellPosition);
-        GameObject turret = Instantiate(towerPrefab, placePosition, Quaternion.identity);
-        placedTurrets[cellPosition] = turret;
+        Tower towerToBuild = BuildManager.main.GetSelectedTower();
+        if (towerToBuild.cost > GameManager.instance.money)
+        {
+            Debug.Log("You do not have enough money!");
+            return;
+        }
+
+        GameManager.instance.SpendMoney(towerToBuild.cost);
+
+        tower = Instantiate(towerToBuild.prefab, placePosition, Quaternion.identity);
+        placedTurrets[cellPosition] = tower;
 
         Debug.Log($"Turret in {cellPosition}");
     }

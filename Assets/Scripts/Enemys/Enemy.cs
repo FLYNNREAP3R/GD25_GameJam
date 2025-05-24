@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     private bool isAlive = true;
     private EnemyTypeSO enemyTypeSO;
     private bool isSlowed;
+    private bool isDestroyed = false;
     private void Start()
     {
         if (path == null || path.Length == 0)
@@ -133,7 +134,11 @@ public class Enemy : MonoBehaviour
 
         actualHealth -= dmg;
         enemyLifeUI.UpdateLife(actualHealth);
-        if (actualHealth <= 0) Die();
+        if (actualHealth <= 0 && !isDestroyed)
+        {
+            isDestroyed = true;
+            Die();
+        }
     }
 
     public void Heal(int amount)

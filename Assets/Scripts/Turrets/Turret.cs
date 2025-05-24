@@ -21,9 +21,6 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform firingPoint;
 
 
-
-
-
     public void Initialize(TurretsSO data)
     {
         turretData = data;
