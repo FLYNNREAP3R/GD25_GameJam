@@ -137,7 +137,7 @@ MonoBehaviour:
   rotationSpeed: 200
   cost: 5
   range: 5
-  fireRate: 0
+  fireRate: 0.5
   turretRotate: {fileID: 2785666321215183990}
   enemyMask:
     serializedVersion: 2

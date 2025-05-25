@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public enum GameState { Start, Play, Pause, End }//Game State
     [SerializeField]private GameState currentGameState = GameState.Start;
     private int score = 0;
+    private bool winLose = false; //Win or Lose
     public int money = 0;
     private void Awake()
     {
@@ -69,8 +70,22 @@ public class GameManager : MonoBehaviour
             case GameState.End:
                 //End Game
                 Time.timeScale = 0;
-                UIManager.instance.ShowFinalPanel();
+                UIManager.instance.ShowFinalPanel(winLose);
                 break;
         }
+    }
+
+    public void GameOver()
+    {
+        winLose = false; // Set to false for Game Over
+        ChangeGameStatus(GameState.End);
+        Debug.Log("Game Over");
+    }
+
+    public void GameWin()
+    {
+        winLose = true; // Set to true for Game Win
+        ChangeGameStatus(GameState.End);
+        Debug.Log("You Win!");
     }
 }

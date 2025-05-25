@@ -7,6 +7,9 @@ public class EnemyPoolManager : MonoBehaviour
 
     private Dictionary<EnemyTypeSO, Queue<Enemy>> poolDictionary = new();
     public Transform enemyContainer;  // El contenedor donde se agruparán los enemigos
+    public bool OnAllEnemiesCleared;
+    private int activeEnemies = 0;
+    private bool allWavesFinished = false;
 
     private void Awake()
     {
@@ -21,7 +24,7 @@ public class EnemyPoolManager : MonoBehaviour
         {
             poolDictionary[type] = new Queue<Enemy>();
         }
-
+        activeEnemies++;
         if (poolDictionary[type].Count > 0)
         {
             Enemy enemy = poolDictionary[type].Dequeue();
@@ -43,7 +46,17 @@ public class EnemyPoolManager : MonoBehaviour
     public void ReturnToPool(Enemy enemy, EnemyTypeSO type)
     {
         enemy.gameObject.SetActive(false);
+        activeEnemies--;
         enemy.transform.SetParent(enemyContainer);  // Asignar el contenedor cuando se desactiva
         poolDictionary[type].Enqueue(enemy);
+        if (activeEnemies <= 0 && allWavesFinished)
+        {
+            Debug.Log("¡Victoria detectada desde el Pool!");
+            GameManager.instance.GameWin();
+        }
+    }
+    public void SetAllWavesFinished()
+    {
+        allWavesFinished = true;
     }
 }

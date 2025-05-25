@@ -45,6 +45,10 @@ public class Bullet : MonoBehaviour
         Vector2 direction = (target.position - transform.position).normalized;
 
         rb.linearVelocity = direction * speed;
+        if(target.gameObject.activeInHierarchy == false)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Seek(Transform _target)
@@ -54,8 +58,11 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        target.GetComponent<Enemy>().TakeDamage(bulletData.damage);
-        Destroy(gameObject);
+        if (other.gameObject == target.gameObject)
+        {
+            target.GetComponent<Enemy>().TakeDamage(bulletData.damage);
+            Destroy(gameObject);
+        }
     }
 
     void SlowEnemy()

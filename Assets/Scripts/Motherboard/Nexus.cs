@@ -31,8 +31,6 @@ public class Nexus : MonoBehaviour
 
     private void Die()
     {
-        // Lógica para la muerte del Nexus
-        Debug.Log("Nexus destroyed!");
-        //Instance Particle System
+        GameManager.instance.GameOver();
     }
 }

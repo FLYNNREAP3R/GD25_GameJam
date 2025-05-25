@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     private bool isAlive = true;
     private EnemyTypeSO enemyTypeSO;
     private bool isSlowed;
-    private bool isDestroyed = false;
     private void Start()
     {
         if (path == null || path.Length == 0)
@@ -24,14 +23,17 @@ public class Enemy : MonoBehaviour
             path = PathManager.Instance.waypoints;
         }
         // Inicializar la vida
+        /*
         actualHealth = health;
         enemyLifeUI = GetComponentInChildren<EnemyLifeUI>();
         enemyLifeUI.SetLife(health);
+        */
         // Inicializar habilidades
+        /*
         foreach (var ability in abilities)
         {
             ability.Initialize(this);
-        }
+        }*/
 
     }
 
@@ -77,7 +79,7 @@ public class Enemy : MonoBehaviour
         Vector3 dir = (target.position - transform.position).normalized;
         transform.position += dir * GetCurrentSpeed() * Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, target.position) < 0.2f)
+        if (Vector3.Distance(transform.position, target.position) < 0.1f)
         {
             currentWaypointIndex++;
         }
@@ -134,9 +136,8 @@ public class Enemy : MonoBehaviour
 
         actualHealth -= dmg;
         enemyLifeUI.UpdateLife(actualHealth);
-        if (actualHealth <= 0 && !isDestroyed)
+        if (actualHealth <= 0)
         {
-            isDestroyed = true;
             Die();
         }
     }

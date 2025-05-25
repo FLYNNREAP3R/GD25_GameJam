@@ -31,7 +31,7 @@ public class Turret : MonoBehaviour
 
     private void Update()
     {
-        if (target == null)
+        if (target == null || !target.gameObject.activeInHierarchy)
         {
             FindTarget();
             return;
@@ -68,8 +68,6 @@ public class Turret : MonoBehaviour
     private bool CheckTargetIsInRange()
     {
         return Vector2.Distance(target.position, transform.position) <= range;
-
-
     }
 
     private void Shoot()
@@ -87,12 +85,10 @@ public class Turret : MonoBehaviour
         turretRotate.rotation = Quaternion.RotateTowards(turretRotate.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
     }
-
+    /*
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
         Handles.DrawWireDisc(transform.position, transform.forward, range);
-    }
-
-
+    }*/
 }

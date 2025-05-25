@@ -23,6 +23,7 @@ public class WaveSpawner : MonoBehaviour
             currentWaveIndex++;
             yield return new WaitForSeconds(timeBetweenWaves);
         }
+        EnemyPoolManager.Instance.SetAllWavesFinished();
     }
 
     IEnumerator SpawnWave(WaveSO wave)

@@ -56,7 +56,7 @@ public class Placement : MonoBehaviour
         tower = Instantiate(towerToBuild.prefab, placePosition, Quaternion.identity);
         placedTurrets[cellPosition] = tower;
 
-        Debug.Log($"Turret in {cellPosition}");
+        //Debug.Log($"Turret in {cellPosition}");
     }
 }
 
