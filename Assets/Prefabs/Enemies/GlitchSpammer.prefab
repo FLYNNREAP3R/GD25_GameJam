@@ -9,9 +9,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8cbcf26446e766a458871e1852c6dc82, type: 3}
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2981322ff08734e488eea9b8f726d46e, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2186864314807955809, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

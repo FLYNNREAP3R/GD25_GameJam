@@ -9,8 +9,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_Size.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b6843f240ac047244ac0424535d1c8c9, type: 3}
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 306874002193172684, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40,6 +56,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2186864314807955809, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -47,6 +79,14 @@ PrefabInstance:
     - target: {fileID: 2186864314807955809, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490213323118281466, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7490213323118281466, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7490213323118281466, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_LocalPosition.x

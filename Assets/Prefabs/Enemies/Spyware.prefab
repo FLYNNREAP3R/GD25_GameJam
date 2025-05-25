@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8338824113619948734, guid: 505f767a29e2dd343ae1ab2c1b17869d, type: 3}
+    - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2186864314807955809, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -88,7 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b625e30ecf727014db64c11c98936637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCloaked: 1
 --- !u!114 &6683468941640348417
 MonoBehaviour:
   m_ObjectHideFlags: 0

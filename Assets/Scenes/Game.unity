@@ -20002,6 +20002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameState: 0
+  money: 0
 --- !u!114 &571593110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60851,7 +60852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06adaeed24b53774590530df032d0b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1
   _life: {fileID: 503002795}
 --- !u!58 &1638313199
 CircleCollider2D:
