@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Worm
   prefab: {fileID: 9034671589032208292, guid: 263e4130a08c0c04e95df2460ca83c82, type: 3}
-  health: 60
+  health: 50
   speed: 3
   reward: 6

@@ -150,7 +150,7 @@ MonoBehaviour:
     count: 1
   - enemyType: {fileID: 11400000, guid: cab95f96124fef44fa5277a7a41ab841, type: 2}
     count: 3
-  summonInterval: 10
+  summonInterval: 15
   spawnRadius: 3
   summonOnce: 0
 --- !u!114 &-6778469958765694247
@@ -180,5 +180,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healRadius: 6
-  healAmount: 20
-  healInterval: 2
+  healAmount: 10
+  healInterval: 5

@@ -51,6 +51,6 @@ public class Bullet : MonoBehaviour
 
     void SlowEnemy()
     {
-        target.GetComponent<Enemy>().SlowEnemy(0.7f, 3);
+        target.GetComponent<Enemy>().SlowEnemy(1.5f, 3);
     }
 }
