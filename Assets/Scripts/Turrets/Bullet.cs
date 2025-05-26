@@ -5,39 +5,19 @@ public class Bullet : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private BulletSO bulletData;
-    [SerializeField] private float speed;
-    [SerializeField] private int damage;
+    private float speed;
+    private int damage;
 
     [Header("Unity Setup Fields")] 
     [SerializeField] private Rigidbody2D rb;
 
     private Transform target;
+    [SerializeField] private bool slowEnemy = false;
 
-    private void Initialize(BulletSO data)
+    public void Initialize()
     {
-        bulletData = data;
-        damage = data.damage;
-        speed = data.speed;
-    }
-    void Update()
-    {
-        //if (target == null)
-        //{
-        //    Destroy(gameObject);
-        //    return;
-        //}
-
-        //Vector3 dir = target.position - transform.position;
-        //float distanceThisFrame = speed * Time.deltaTime;
-
-        //if (dir.magnitude <= distanceThisFrame)
-        //{
-        //    SlowEnemy();
-        //    Destroy(gameObject);
-        //    return;
-        //}
-        //transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-
+        damage = bulletData.damage;
+        speed = bulletData.speed;
     }
 
     private void FixedUpdate()
@@ -60,7 +40,11 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject == target.gameObject)
         {
-            target.GetComponent<Enemy>().TakeDamage(bulletData.damage);
+            target.GetComponent<Enemy>().TakeDamage(damage);
+            if (slowEnemy)
+            {
+                SlowEnemy();
+            }
             Destroy(gameObject);
         }
     }

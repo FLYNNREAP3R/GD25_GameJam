@@ -12,7 +12,7 @@ public class SpawnMinionsOnDeath : EnemyAbility
 
         for (int i = 0; i < minionCount; i++)
         {
-            Vector3 offset = new Vector3(Random.Range(-spawnSpread, spawnSpread),0,Random.Range(-spawnSpread, spawnSpread));
+            Vector3 offset = new Vector3(Random.Range(-spawnSpread, spawnSpread), Random.Range(-spawnSpread, spawnSpread), 0);
 
             Enemy minion = EnemyPoolManager.Instance.GetEnemy(minionType);
             minion.transform.position = transform.position + offset;

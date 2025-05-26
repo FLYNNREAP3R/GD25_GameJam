@@ -15,5 +15,5 @@ MonoBehaviour:
   turretName: Cannon
   prefab: {fileID: 3534988172269398797, guid: 202e49f316f64e74bbc8a0aa4f784a9b, type: 3}
   target: {fileID: 0}
-  range: 10
-  cost: 5
+  range: 7
+  cost: 10

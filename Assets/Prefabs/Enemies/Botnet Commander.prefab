@@ -50,11 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2186864314807955809, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_AnchorMax.x
@@ -151,8 +151,8 @@ MonoBehaviour:
   - enemyType: {fileID: 11400000, guid: cab95f96124fef44fa5277a7a41ab841, type: 2}
     count: 3
   summonInterval: 10
-  spawnRadius: 1.5
-  summonOnce: 1
+  spawnRadius: 3
+  summonOnce: 0
 --- !u!114 &-6778469958765694247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97427d48da74264099d72ccf84cd6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healRadius: 4
-  healAmount: 2
+  healRadius: 6
+  healAmount: 20
   healInterval: 2

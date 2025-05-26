@@ -22,27 +22,14 @@ public class Enemy : MonoBehaviour
         {
             path = PathManager.Instance.waypoints;
         }
-        // Inicializar la vida
-        /*
-        actualHealth = health;
-        enemyLifeUI = GetComponentInChildren<EnemyLifeUI>();
-        enemyLifeUI.SetLife(health);
-        */
-        // Inicializar habilidades
-        /*
-        foreach (var ability in abilities)
-        {
-            ability.Initialize(this);
-        }*/
-
     }
-
 
     public void Initialize(EnemyTypeSO data)
     {
         currentWaypointIndex = 0;
         enemyTypeSO = data;
         health = data.health;
+        actualHealth = health; // Set actual health to max health
         speed = data.speed;
         reward = data.reward;
         isAlive = true;
@@ -61,9 +48,6 @@ public class Enemy : MonoBehaviour
         {
             ability.UpdateAbility();
         }
-
-        // Mover, seguir camino, etc.
-        //Move forward 2d
         MoveAlongPath();
     }
     void MoveAlongPath()
@@ -115,7 +99,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         if(!isAlive) return;
-        MusicController.instance.PlayEffect("Shoot_"+Random.Range(1, 6));
         // Revelar si tiene Cloak
         foreach (var ability in abilities)
         {
@@ -165,7 +148,7 @@ public class Enemy : MonoBehaviour
             ability.OnDeath();
         }
 
-        GameManager.instance.EnemyDeath(enemyTypeSO.reward);
+        GameManager.instance.EnemyDeath(reward);
         //Pool, disable
         EnemyPoolManager.Instance.ReturnToPool(this, enemyTypeSO);
         //gameObject.SetActive(false);

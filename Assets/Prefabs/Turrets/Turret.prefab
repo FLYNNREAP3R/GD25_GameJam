@@ -80,8 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 700
-  cost: 0
-  range: 5
+  range: 6
   fireRate: 2
   turretRotate: {fileID: 9004793741285988129}
   enemyMask:

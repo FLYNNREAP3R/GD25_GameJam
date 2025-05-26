@@ -46,11 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2186864314807955809, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_AnchorMax.x
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241fb9d60b25e844bb8a3133d1a24b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flatReduction: 1
+  flatReduction: 3
   usePercentage: 0
   percentReduction: 0.25
 --- !u!114 &-198704144327272865

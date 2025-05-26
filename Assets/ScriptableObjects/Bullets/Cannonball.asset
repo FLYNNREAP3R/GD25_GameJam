@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Cannonball
   m_EditorClassIdentifier: 
   prefab: {fileID: 1576999567707868353, guid: ca95ca951b0764740aaa7029075ebef4, type: 3}
-  damage: 15
+  damage: 7
+  speed: 10

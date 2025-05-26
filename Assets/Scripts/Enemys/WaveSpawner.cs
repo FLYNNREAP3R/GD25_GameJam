@@ -11,6 +11,11 @@ public class WaveSpawner : MonoBehaviour
 
     void Start()
     {
+        Invoke("FirstWave", 3f);
+    }
+
+    private void FirstWave()
+    {
         StartCoroutine(SpawnWavesRoutine());
     }
 

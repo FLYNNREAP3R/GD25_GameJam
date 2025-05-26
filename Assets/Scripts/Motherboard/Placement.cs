@@ -44,7 +44,7 @@ public class Placement : MonoBehaviour
         }
 
         Vector3 placePosition = tilemap.GetCellCenterWorld(cellPosition);
-        Tower towerToBuild = BuildManager.main.GetSelectedTower();
+        TurretsSO towerToBuild = BuildManager.main.GetSelectedTower();
         if (towerToBuild.cost > GameManager.instance.money)
         {
             Debug.Log("You do not have enough money!");

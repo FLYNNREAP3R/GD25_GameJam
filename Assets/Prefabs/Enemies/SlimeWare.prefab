@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937602556597090209, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_Name
-      value: Slime
+      value: SlimeWare
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -102,5 +102,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minionType: {fileID: 11400000, guid: 8533ab618beb155449d66af62c77b7ac, type: 2}
-  minionCount: 2
+  minionCount: 3
   spawnSpread: 1

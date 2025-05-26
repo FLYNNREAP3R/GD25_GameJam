@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8338824113619948734, guid: 505f767a29e2dd343ae1ab2c1b17869d, type: 3}
+    - target: {fileID: 121811880499445382, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1639630300528289213, guid: 9d35575be2f065b459066a8d4404ad53, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.25
@@ -113,5 +117,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healRadius: 4
-  healAmount: 2
-  healInterval: 2
+  healAmount: 10
+  healInterval: 1

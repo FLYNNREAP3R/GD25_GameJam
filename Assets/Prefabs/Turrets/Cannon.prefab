@@ -47,9 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 200
-  cost: 10
-  range: 10
-  fireRate: 1
+  range: 4
+  fireRate: 0.75
   turretRotate: {fileID: 8742467533734630765}
   enemyMask:
     serializedVersion: 2

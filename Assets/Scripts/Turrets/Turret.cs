@@ -10,7 +10,6 @@ public class Turret : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private int cost;
     [SerializeField] private float range;
     [SerializeField] private float fireRate;
 
@@ -26,7 +25,6 @@ public class Turret : MonoBehaviour
         turretData = data;
         target = data.target;
         range = data.range;
-        cost = data.cost;
     }
 
     private void Update()
@@ -72,8 +70,10 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
+        MusicController.instance.PlayEffect("Shoot_" + Random.Range(1, 6));
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        bulletScript.Initialize();
         bulletScript.Seek(target);
     }
 
